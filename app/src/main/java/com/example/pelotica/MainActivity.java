@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         puntaje = findViewById(R.id.txtPuntaje);
         pelota = findViewById(R.id.imgPelota);
         campo = findViewById(R.id.imgCampo);
@@ -34,32 +34,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Nomover(View view) {
-        sensorManager.unregisterListener(sensorEventListener);
-        Toast.makeText(this, "Termina el juego", Toast.LENGTH_SHORT).show();
+        //metoddo de boton que tetiene el juego
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    
     public void Movimiento(View view) {
-
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL,SensorManager.SENSOR_DELAY_UI);
-            Toast.makeText(this, "Inicia el juego", Toast.LENGTH_SHORT).show();
-        }
+        //Meotodo del boton para iniciar el juego
     }
 
-    SensorEventListener sensorEventListener = new SensorEventListener() {
-        @Override
-        public void onSensorChanged(SensorEvent event) {
-            pelota.setY(pelota.getY()+(event.values[2]*100));
-            pelota.setX(pelota.getX()+(event.values[0]*100));
-            puntaje.setText("Movimiento  X: "+event.values[0]+" Y: "+event.values[1]+" Z: "+event.values[2]);
-        }
 
-        @Override
-        public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-        }
-    };
 
 
 }
