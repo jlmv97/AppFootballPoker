@@ -4,78 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F00C293C"
+    android:background="@drawable/level1"
     android:scrollbarAlwaysDrawHorizontalTrack="true"
-    tools:context=".MainActivity">
-
-    <ImageButton
-        android:id="@+id/btnStart"
-        android:layout_width="64dp"
-        android:layout_height="62dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:onClick="Movimiento"
-        android:scaleType="fitXY"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jugar" />
-
-    <ImageButton
-        android:id="@+id/btnFinish"
-        android:layout_width="64dp"
-        android:layout_height="62dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:onClick="Nomover"
-        android:scaleType="centerInside"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/terminar" />
-
-    <ImageView
-        android:id="@+id/imgCampo"
-        android:layout_width="379dp"
-        android:layout_height="536dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnStart"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/level1" />
-
-    <ImageView
-        android:id="@+id/imgPelota"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imgCampo"
-        app:layout_constraintStart_toStartOf="@+id/imgCampo"
-        app:layout_constraintTop_toTopOf="@+id/imgCampo"
-        app:srcCompat="@drawable/cricket" />
-
-    <ImageView
-        android:id="@+id/imgPorteria"
-        android:layout_width="69dp"
-        android:layout_height="46dp"
-        android:scaleType="centerInside"
-        app:layout_constraintBottom_toBottomOf="@+id/imgCampo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imgCampo"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/borrar" />
+    tools:context=".MainActivity" >
 
     <TextView
         android:id="@+id/txtPuntaje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Puntaje "
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/imgCampo"
-        app:layout_constraintEnd_toStartOf="@+id/btnFinish"
-        app:layout_constraintStart_toEndOf="@+id/btnStart"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="189dp"
+        android:layout_marginRight="189dp"
+        android:layout_marginBottom="707dp"
+        android:text="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="39dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginRight="213dp"
+        android:layout_marginBottom="642dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/borrar" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="39dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="213dp"
+        android:layout_marginLeft="213dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginRight="213dp"
+        android:layout_marginBottom="43dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/borrar" />
 </androidx.constraintlayout.widget.ConstraintLayout>

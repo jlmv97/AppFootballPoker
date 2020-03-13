@@ -19,27 +19,19 @@ public class MainActivity extends AppCompatActivity {
     SensorManager sensorManager;
     Sensor sensor;
     TextView puntaje;
-    ImageView pelota,campo,porteria;
+    MiPelota dibujo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        puntaje = findViewById(R.id.txtPuntaje);
-        pelota = findViewById(R.id.imgPelota);
-        campo = findViewById(R.id.imgCampo);
-        porteria = findViewById(R.id.imgPorteria);
+        dibujo = new MiPelota(this);
+        setContentView(dibujo);
+
+
+
+
     }
 
-    public void Nomover(View view) {
-        //metoddo de boton que tetiene el juego
-    }
-    
-    public void Movimiento(View view) {
-        //Meotodo del boton para iniciar el juego
-    }
 
 
 
