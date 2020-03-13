@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //Esto inserta el view donde se dibuja la pelota y el campo.
         dibujo = new MiPelota(this);
         setContentView(dibujo);
 

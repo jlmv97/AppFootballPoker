@@ -31,7 +31,7 @@ public class MiPelota extends View implements SensorEventListener {
     Bitmap bitmap;
 
 
-    public MiPelota(Context interfaz){
+    public MiPelota(Context interfaz){//Constructor del view
         super(interfaz);
         SensorManager sensorManager = (SensorManager) getContext().getSystemService(Context.SENSOR_SERVICE);
         Sensor snSensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
@@ -41,26 +41,26 @@ public class MiPelota extends View implements SensorEventListener {
         //pantalla.getSize(point);
         ancho = pantalla.getWidth();
         alto = pantalla.getHeight();
-        bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.level1);
+        bitmap = BitmapFactory.decodeResource(getResources(),R.drawable.level1);//dibuja el campo
         bitmap = Bitmap.createScaledBitmap(bitmap,ancho,alto+20,true);
-        ejeX=ancho/2;
+        ejeX=ancho/2;//hace que la pelota apareca al inicio
         ejeY=alto/2;
 
     }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
-        ejeX-=(event.values[0])*4;
+        ejeX-=(event.values[0])*4;//Esta controla la velocidad
         X=Float.toString(ejeX);
-        if(ejeX<(tamario+borde)){
+        if(ejeX<(tamario+borde)){//Evita que se salga por los lados
             ejeX=(tamario+borde);
         }
         else if(ejeX>(ancho-(tamario+borde))){
             ejeX= ancho-(tamario+borde);
         }
-        ejeY+=(event.values[1])*4;
+        ejeY+=(event.values[1])*4;//Esta controla la velocidad
         Y=Float.toString(ejeY);
-        if(ejeY<(tamario+borde)){
+        if(ejeY<(tamario+borde)){//Evita que se salga la pelota por arriba y abajo y cuenta los puntos
 
             if(ejeX > (ancho/2) - 200 && ejeX < (ancho/2) + 200) {
                 ejeX = ancho/2;
@@ -102,7 +102,7 @@ public class MiPelota extends View implements SensorEventListener {
     }
 
     @Override
-    protected void onDraw(Canvas canvas) {
+    protected void onDraw(Canvas canvas) {//Metodo que realiza el dibujo de la pelota y los puntajes
         super.onDraw(canvas);
         canvas.drawBitmap(bitmap,0,0,pincel);
         pincel.setColor(Color.WHITE);
